@@ -6,7 +6,7 @@ import ChatLumIA from "../components/ChatLumIA";
 
 import { getTestesPorColaborador } from "../services/adm";
 
-const API = "http://localhost:8080";
+const API = "https://lume-backend-34oq.onrender.com";
 
 export default function Perfil() {
   const COLAB_ID = 21; // Adriano
