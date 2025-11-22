@@ -1,6 +1,6 @@
 export async function conversarComLumIA(mensagem: string): Promise<string> {
   try {
-    const resp = await fetch("http://localhost:8080/chat", {
+    const resp = await fetch("https://lume-backend-34oq.onrender.com", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ mensagem }),
