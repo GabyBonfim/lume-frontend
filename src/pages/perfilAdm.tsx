@@ -213,7 +213,7 @@ const [novoColaborador, setNovoColaborador] = useState({
 
   async function abrirModalAtrelar() {
   try {
-    const r = await fetch("http://localhost:8080/testes"); // ou use getTodosTestes()
+    const r = await fetch("https://lume-backend-34oq.onrender.com/testes"); // ou use getTodosTestes()
     const lista = await r.json();
     setListaTestes(lista);
     setModalAtrelar(true);
@@ -227,7 +227,7 @@ async function atribuirTeste(idTeste: number) {
   if (!colaboradorSelecionado) return;
 
   try {
-    const url = `http://localhost:8080/colaboradores/${colaboradorSelecionado.id}/teste/${idTeste}`;
+    const url = `https://lume-backend-34oq.onrender.com/colaboradores/${colaboradorSelecionado.id}/teste/${idTeste}`;
 
     const resp = await fetch(url, {
       method: "POST",
@@ -518,7 +518,6 @@ async function atribuirTeste(idTeste: number) {
           novo.endereco.cep = v;
           setNovoColaborador(novo);
 
-          // 🔥 QUANDO O CEP FICAR COMPLETO (8 dígitos)
           if (v.length === 8) {
             try {
               const res = await fetch(`https://viacep.com.br/ws/${v}/json/`);
@@ -624,7 +623,7 @@ async function atribuirTeste(idTeste: number) {
           className="px-4 py-2 bg-[#789c63] text-white rounded hover:bg-[#6c8a58]"
           onClick={async () => {
             try {
-              const res = await fetch("http://localhost:8080/colaboradores", {
+              const res = await fetch("https://lume-backend-34oq.onrender.com/colaboradores", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -758,7 +757,6 @@ async function atribuirTeste(idTeste: number) {
   ) : (
     <ul className="space-y-3">
 
-      {/* ⭐ REMOVE DUPLICADOS AQUI ⭐ */}
       {testes
         .filter(
           (t: any, index: number, self: any[]) =>
@@ -776,7 +774,6 @@ async function atribuirTeste(idTeste: number) {
     </ul>
   )}
 </div>
-
 
           {/* Feedbacks */}
           <div className="bg-white shadow rounded-xl p-4">
