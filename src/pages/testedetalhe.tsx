@@ -13,7 +13,7 @@ export default function TesteDetalhe() {
 
   async function carregarTeste() {
     try {
-      const res = await fetch(`http://localhost:8080/testes/${id}`);
+      const res = await fetch(`https://lume-backend-34oq.onrender.com/colaboradores/{id}/teste/{idTeste}`);
       const data = await res.json();
       setTeste(data);
     } catch (err) {
