@@ -1,73 +1,194 @@
-# React + TypeScript + Vite
+📘 LUME — Plataforma de Desenvolvimento de Soft Skills com IA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A LUME é uma plataforma corporativa focada no desenvolvimento de soft skills, avaliação contínua e acompanhamento de colaboradores dentro de equipes.
+O sistema integra Java (Spring Boot) no backend, React + Vite + Tailwind no frontend e uma assistente inteligente chamada LUM.IA, que auxilia gestores e colaboradores com interações automáticas, análises e feedbacks.
 
-Currently, two official plugins are available:
+Este projeto foi desenvolvido para as disciplinas de Front-End Design Engineering e Java/Domain Driven Design using Java, durante o 1º ano do curso de Análise e Desenvolvimento de Sistemas – FIAP.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👥 Desenvolvedores
+Nome	RM	Função
+Gabriely Bonfim Silva	RM566242	Front-end, Back-end, UI/UX, integração com API
+Mirelly Sousa Alves	RM566299	Back-end, lógica de negócio, LUM.IA e modelagem do sistema
+Henrique Sousa Vespasiano	RM562917	Banco de dados, testes e implementação de regras de negócio
 
-## React Compiler
+📌 Descrição Geral do Projeto
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+A LUME tem como objetivo automatizar, organizar e ampliar o desenvolvimento humano dentro das empresas, oferecendo:
 
-## Expanding the ESLint configuration
+Gestão de colaboradores
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Atribuição de testes individuais
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Registro e acompanhamento de resultados
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Chat inteligente com IA
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Dashboard com status e pendências
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Área administrativa para gerenciar toda a operação
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+A plataforma foi construída com foco em escalabilidade, boas práticas de arquitetura e experiência do usuário.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🛠️ Arquitetura da Solução
+Front-end (React + Vite + TypeScript)
+
+React + Vite
+
+TailwindCSS
+
+React Router DOM
+
+Requisições assíncronas para a API
+
+Páginas:
+
+Homepage
+
+Login
+
+Perfil do Colaborador
+
+Perfil Administrativo
+
+Lista de Testes
+
+Detalhes do Teste
+
+Sobre Nós
+
+Componentes reutilizáveis
+
+Layout responsivo
+
+Back-end (Java + Spring Boot + DDD)
+
+Java 17
+
+Spring Boot
+
+Controllers REST
+
+Services e Regras de Negócio
+
+Repositórios JPA
+
+MySQL / H2 (dependendo do ambiente)
+
+Domínio organizado (DDD):
+
+Colaborador
+
+Teste
+
+Feedback
+
+Resultado
+
+Endpoints CRUD completos
+
+Documentação de rotas REST
+
+📊 Banco de Dados (Modelo Resumido)
+
+COLABORADOR
+
+id, nome, email, telefone, dataNascimento, número, testes (1:N)
+
+TESTE
+
+id, titulo, conteúdo, criadoEm, status, colaborador_id
+
+FEEDBACK
+
+id, conteudo, criadoEm, teste_id
+
+📡 Endpoints Principais (API REST)
+Método	Rota	Descrição
+GET	/colaboradores	Lista todos os colaboradores
+POST	/colaboradores	Cria um novo colaborador
+GET	/testes	Retorna todos os testes
+POST	/colaboradores/{id}/teste/{idTeste}	Atribui um teste
+GET	/testes/{id}	Dados completos de um teste
+POST	/feedback/{idTeste}	Adiciona feedback ao teste
+✨ Funcionalidades Principais
+👤 Para Colaboradores
+
+Visualizar seus dados pessoais
+
+Ver testes pendentes
+
+Realizar testes
+
+Enviar respostas
+
+Ler feedbacks da IA
+
+Conversar com a assistente LUM.IA
+
+🛠️ Para Administradores
+
+Criar colaboradores
+
+Editar e excluir cadastros
+
+Atribuir testes
+
+Acessar conversas e feedbacks
+
+Visualizar progresso geral
+
+Gerenciar banco de testes
+
+🎨 Identidade e Experiência do Usuário
+
+A LUME foi projetada para transmitir:
+
+Clareza
+
+Leveza
+
+Organização
+
+Fluidez
+
+Minimalismo moderno
+
+Com uma paleta suave em tons de bege, verde e branco, e elementos arredondados inspirados em sistemas corporativos modernos.
+
+🌐 Links do Projeto
+
+👉 Frontend (Vercel): adicione aqui
+👉 Backend (Render): adicione aqui
+👉 Vídeo de Demonstração (YouTube): adicione aqui
+
+Se quiser, posso preencher automaticamente quando você mandar os links.
+
+🚀 Como Rodar o Projeto Localmente
+Back-end (Java)
+# entrar na pasta do backend
+cd lume-backend
+
+# rodar o projeto
+mvn spring-boot:run
+
+
+API abrirá em:
+👉 http://localhost:8080
+
+Front-end (React)
+# entrar na pasta do front
+cd lume-frontend
+
+# instalar dependências
+npm install
+
+# rodar o projeto
+npm run dev
+
+
+Aplicação abrirá em:
+👉 http://localhost:5173
+
+📑 Conclusão
+
+A LUME se consolidou como uma solução inovadora e completa para o desenvolvimento de soft skills dentro de equipes corporativas, unindo tecnologia, design e inteligência artificial. O projeto demonstrou domínio técnico do grupo, uso eficiente de boas práticas de front-end, back-end e modelagem de dados, além de abrir espaço para futuras evoluções e integração com análises avançadas.
