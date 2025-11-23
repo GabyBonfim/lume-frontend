@@ -19,7 +19,7 @@ export default function ChatLumIA() {
     setDigitando(true);
 
     try {
-      const resposta = await fetch("http://localhost:8080/chat", {
+      const resposta = await fetch("https://lume-backend-34oq.onrender.com/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ mensagem: novaMsg.texto }),
