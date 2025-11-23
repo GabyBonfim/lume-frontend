@@ -1,194 +1,193 @@
-📘 LUME — Plataforma de Desenvolvimento de Soft Skills com IA
+# 🌟 LUME – Plataforma Inteligente de Desenvolvimento de Soft Skills
 
-A LUME é uma plataforma corporativa focada no desenvolvimento de soft skills, avaliação contínua e acompanhamento de colaboradores dentro de equipes.
-O sistema integra Java (Spring Boot) no backend, React + Vite + Tailwind no frontend e uma assistente inteligente chamada LUM.IA, que auxilia gestores e colaboradores com interações automáticas, análises e feedbacks.
+A **LUME** é uma plataforma corporativa criada para apoiar colaboradores e gestores no desenvolvimento de **soft skills**, oferecendo testes, feedbacks inteligentes e acompanhamento por meio da assistente virtual **LUM.IA**.  
 
-Este projeto foi desenvolvido para as disciplinas de Front-End Design Engineering e Java/Domain Driven Design using Java, durante o 1º ano do curso de Análise e Desenvolvimento de Sistemas – FIAP.
+O projeto integra **Front-end em React + Vite** e **Back-end em Java (Spring Boot)**, seguindo boas práticas de arquitetura, DDD, modelagem de dados e experiência do usuário.
 
-👥 Desenvolvedores
-Nome	RM	Função
-Gabriely Bonfim Silva	RM566242	Front-end, Back-end, UI/UX, integração com API
-Mirelly Sousa Alves	RM566299	Back-end, lógica de negócio, LUM.IA e modelagem do sistema
-Henrique Sousa Vespasiano	RM562917	Banco de dados, testes e implementação de regras de negócio
+---
 
-📌 Descrição Geral do Projeto
+## 👥 Desenvolvedores
 
-A LUME tem como objetivo automatizar, organizar e ampliar o desenvolvimento humano dentro das empresas, oferecendo:
+| Nome | RM | Função |
+|------|------|--------|
+| **Gabriely Bonfim Silva** | RM566242 | Front-end, Back-end, UI/UX, integração com API |
+| **Mirelly Sousa Alves** | RM566299 | Back-end, lógica de negócio, LUM.IA e modelagem de domínio |
+| **Henrique Sousa Vespasiano** | RM562917 | Banco de dados, DDD, testes e regras de negócio, Aplicações em PY |
 
-Gestão de colaboradores
+---
 
-Atribuição de testes individuais
+## 📌 Sobre o Projeto
 
-Registro e acompanhamento de resultados
+A LUME foi desenvolvida com o objetivo de **automatizar e padronizar processos de desenvolvimento humano dentro das empresas**, oferecendo:
 
-Chat inteligente com IA
+- Gestão completa de colaboradores  
+- Atribuição e realização de testes  
+- Geração de feedbacks inteligentes  
+- Chat com IA integrada  
+- Painéis administrativos e operacionais  
+- Histórico de respostas e acompanhamento evolutivo  
 
-Dashboard com status e pendências
+A interface foi pensada para ser **leve, acessível, responsiva e intuitiva**, utilizando design moderno em tons suaves de verde e bege.
 
-Área administrativa para gerenciar toda a operação
+---
 
-A plataforma foi construída com foco em escalabilidade, boas práticas de arquitetura e experiência do usuário.
+## 🛠️ Arquitetura da Solução
 
-🛠️ Arquitetura da Solução
-Front-end (React + Vite + TypeScript)
+### 🎨 Front-end (React + Vite + TypeScript)
+- React 19  
+- Vite  
+- TailwindCSS  
+- React Router DOM  
+- Componentização e reaproveitamento  
+- Requisições assíncronas para API  
+- Páginas:
+  - Homepage  
+  - Login  
+  - Perfil do Colaborador  
+  - Painel Administrativo  
+  - Lista de Testes  
+  - Detalhes do Teste  
+  - Sobre Nós  
 
-React + Vite
+---
 
-TailwindCSS
+### ☕ Back-end (Java + Spring Boot)
+- Java 17  
+- Spring Boot  
+- Controllers REST  
+- Services com regras de negócio  
+- Repository + JPA  
+- DDD (Domain Driven Design)  
+- Banco MySQL / H2  
+- Entidades:
+  - Colaborador  
+  - Teste  
+  - Feedback  
 
-React Router DOM
+---
 
-Requisições assíncronas para a API
+## 🗂️ Banco de Dados – Modelo Resumido
 
-Páginas:
+### **COLABORADOR**
+- id  
+- nome  
+- email  
+- telefone  
+- dataNascimento  
+- numero  
+- testes (1:N)
 
-Homepage
+### **TESTE**
+- id  
+- titulo  
+- conteudo  
+- criadoEm  
+- status  
+- colaborador_id  
 
-Login
+### **FEEDBACK**
+- id  
+- conteudo  
+- criadoEm  
+- teste_id  
 
-Perfil do Colaborador
+---
 
-Perfil Administrativo
+## 📡 Endpoints da API
 
-Lista de Testes
+| Método | Rota | Descrição |
+|--------|-------|-----------|
+| GET | `/colaboradores` | Lista todos os colaboradores |
+| POST | `/colaboradores` | Cria um novo colaborador |
+| GET | `/testes` | Lista todos os testes disponíveis |
+| POST | `/colaboradores/{id}/teste/{idTeste}` | Atribui um teste a um colaborador |
+| GET | `/testes/{id}` | Retorna detalhes do teste |
+| POST | `/feedback/{idTeste}` | Adiciona feedback a um teste |
 
-Detalhes do Teste
+---
 
-Sobre Nós
+## 🌐 Links do Projeto
 
-Componentes reutilizáveis
+🔗 **Frontend (Vercel):** _adicionar aqui_  
+🔗 **Backend (Render):** _adicionar aqui_  
+🎥 **Vídeo de Demonstração (YouTube):** _adicionar aqui_  
 
-Layout responsivo
+_(Me envie os links e eu coloco aqui formatado!)_
 
-Back-end (Java + Spring Boot + DDD)
+---
 
-Java 17
+## 🚀 Como rodar o projeto localmente
 
-Spring Boot
+### 🔧 Back-end (Java)
 
-Controllers REST
+```bash
+cd lume-backend
+mvn spring-boot:run
 
-Services e Regras de Negócio
+cd lume-frontend
+npm install
+npm run dev
 
-Repositórios JPA
+```
+Acessar API:
+👉 http://localhost:8080
 
-MySQL / H2 (dependendo do ambiente)
+### Front end (REACT)
 
-Domínio organizado (DDD):
+```bash
+cd lume-frontend
+npm install
+npm run dev
+```
+Acessar aplicação:
+👉 http://localhost:5173
 
-Colaborador
+## 🌱 Principais Funcionalidades
+### 👤 Colaboradores
 
-Teste
-
-Feedback
-
-Resultado
-
-Endpoints CRUD completos
-
-Documentação de rotas REST
-
-📊 Banco de Dados (Modelo Resumido)
-
-COLABORADOR
-
-id, nome, email, telefone, dataNascimento, número, testes (1:N)
-
-TESTE
-
-id, titulo, conteúdo, criadoEm, status, colaborador_id
-
-FEEDBACK
-
-id, conteudo, criadoEm, teste_id
-
-📡 Endpoints Principais (API REST)
-Método	Rota	Descrição
-GET	/colaboradores	Lista todos os colaboradores
-POST	/colaboradores	Cria um novo colaborador
-GET	/testes	Retorna todos os testes
-POST	/colaboradores/{id}/teste/{idTeste}	Atribui um teste
-GET	/testes/{id}	Dados completos de um teste
-POST	/feedback/{idTeste}	Adiciona feedback ao teste
-✨ Funcionalidades Principais
-👤 Para Colaboradores
-
-Visualizar seus dados pessoais
+Visualizar suas informações
 
 Ver testes pendentes
 
 Realizar testes
 
-Enviar respostas
+Consultar histórico de feedbacks
 
-Ler feedbacks da IA
+Conversar com a LUM.IA
 
-Conversar com a assistente LUM.IA
+### 🛠️ Administradores
 
-🛠️ Para Administradores
+Criar, editar e remover colaboradores
 
-Criar colaboradores
+Atribuir testes individualmente
 
-Editar e excluir cadastros
-
-Atribuir testes
+Acompanhar evoluções
 
 Acessar conversas e feedbacks
 
-Visualizar progresso geral
+Monitorar o andamento dos testes
 
-Gerenciar banco de testes
+### 🧠 Assistente Inteligente – LUM.IA
 
-🎨 Identidade e Experiência do Usuário
+A LUM.IA é capaz de:
 
-A LUME foi projetada para transmitir:
+Responder dúvidas
 
-Clareza
+Gerar feedbacks personalizados
 
-Leveza
+Registrar conversas
 
-Organização
+Acompanhar o progresso do colaborador
 
-Fluidez
+Facilitar a comunicação entre equipe e gestão
 
-Minimalismo moderno
+# 🧾 Conclusão
 
-Com uma paleta suave em tons de bege, verde e branco, e elementos arredondados inspirados em sistemas corporativos modernos.
+A LUME representa uma solução inovadora e acessível para empresas que desejam investir no desenvolvimento pessoal e profissional de seus colaboradores.
+Combinando tecnologia, inteligência artificial e um design amigável, o projeto demonstra maturidade técnica, organização e visão de futuro.
 
-🌐 Links do Projeto
+A plataforma está pronta para evoluir, podendo receber novas funcionalidades como dashboards avançados, gamificação e relatórios automáticos.
 
-👉 Frontend (Vercel): adicione aqui
-👉 Backend (Render): adicione aqui
-👉 Vídeo de Demonstração (YouTube): adicione aqui
-
-Se quiser, posso preencher automaticamente quando você mandar os links.
-
-🚀 Como Rodar o Projeto Localmente
-Back-end (Java)
-# entrar na pasta do backend
-cd lume-backend
-
-# rodar o projeto
-mvn spring-boot:run
+# ✨ Obrigado por visitar o projeto LUME!
 
 
-API abrirá em:
-👉 http://localhost:8080
-
-Front-end (React)
-# entrar na pasta do front
-cd lume-frontend
-
-# instalar dependências
-npm install
-
-# rodar o projeto
-npm run dev
-
-
-Aplicação abrirá em:
-👉 http://localhost:5173
-
-📑 Conclusão
-
-A LUME se consolidou como uma solução inovadora e completa para o desenvolvimento de soft skills dentro de equipes corporativas, unindo tecnologia, design e inteligência artificial. O projeto demonstrou domínio técnico do grupo, uso eficiente de boas práticas de front-end, back-end e modelagem de dados, além de abrir espaço para futuras evoluções e integração com análises avançadas.
