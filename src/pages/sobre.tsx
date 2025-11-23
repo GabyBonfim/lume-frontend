@@ -8,7 +8,7 @@ export default function Sobre() {
       nome: "Gabriely Bonfim Silva",
       rm: "RM566242",
       foto: "/images/bonfim.jpeg",
-      github: "https://github.com/",
+      github: "https://github.com/GabyBonfim",
       linkedin: "www.linkedin.com/in/gabriely-bonfim-87010a2b4",
     },
     {
