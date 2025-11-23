@@ -6,21 +6,24 @@ export default function Sobre() {
   const equipe = [
     {
       nome: "Gabriely Bonfim Silva",
-      foto: "https://via.placeholder.com/300",
+      rm: "RM566242",
+      foto: "/images/bonfim.jpeg",
       github: "https://github.com/",
-      linkedin: "https://linkedin.com/",
+      linkedin: "www.linkedin.com/in/gabriely-bonfim-87010a2b4",
     },
     {
       nome: "Mirelly Sousa Alves",
-      foto: "https://via.placeholder.com/300",
-      github: "https://github.com/",
-      linkedin: "https://linkedin.com/",
+      rm: "RM566299",
+      foto: "/images/sousa.jpeg",
+      github: "https://github.com/mirellysousa",
+      linkedin: "https://www.linkedin.com/in/mirelly-sousa/",
     },
     {
       nome: "Henrique Vespasiano",
-      foto: "https://via.placeholder.com/300",
+      rm: "RM562917",
+      foto: "/images/vespasiano.jpeg",
       github: "https://github.com/",
-      linkedin: "https://linkedin.com/",
+      linkedin: "https://www.linkedin.com/in/henrique-rodrigues-vespasiano-532722233/",
     },
   ];
 
@@ -55,6 +58,7 @@ export default function Sobre() {
               />
 
               <h3 className="text-xl font-semibold">{pessoa.nome}</h3>
+              <h3 className="text-xl font-semibold">{pessoa.rm}</h3>
 
               <div className="flex justify-center gap-6 mt-4 text-2xl">
                 <a
