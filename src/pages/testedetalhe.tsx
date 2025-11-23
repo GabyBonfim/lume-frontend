@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
-
 export default function TesteDetalhe() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -13,9 +12,15 @@ export default function TesteDetalhe() {
 
   async function carregarTeste() {
     try {
-      const res = await fetch(`https://lume-backend-34oq.onrender.com/colaboradores/{id}/teste/{idTeste}`);
+      const res = await fetch(`https://lume-backend-34oq.onrender.com/testes/${id}`);
+
+      if (!res.ok) {
+        throw new Error("Teste não encontrado");
+      }
+
       const data = await res.json();
       setTeste(data);
+
     } catch (err) {
       console.error("Erro ao carregar teste:", err);
       alert("Erro ao carregar o teste.");
@@ -25,8 +30,8 @@ export default function TesteDetalhe() {
   }
 
   useEffect(() => {
-    carregarTeste();
-  }, []);
+    if (id) carregarTeste();
+  }, [id]);
 
   return (
     <div className="min-h-screen bg-[#FFFDD0] flex flex-col">
@@ -50,7 +55,6 @@ export default function TesteDetalhe() {
               {teste.titulo}
             </h1>
 
-            {/* Conteúdo do teste */}
             <div className="prose max-w-none whitespace-pre-line">
               {teste.conteudo}
             </div>
