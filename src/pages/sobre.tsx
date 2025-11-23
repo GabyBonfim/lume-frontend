@@ -21,7 +21,7 @@ export default function Sobre() {
     {
       nome: "Henrique Vespasiano",
       rm: "RM562917",
-      foto: "/images/vespasiano.jpeg",
+      foto: "/images/vespasiano.png",
       github: "https://github.com/",
       linkedin: "https://www.linkedin.com/in/henrique-rodrigues-vespasiano-532722233/",
     },
@@ -58,7 +58,7 @@ export default function Sobre() {
               />
 
               <h3 className="text-xl font-semibold">{pessoa.nome}</h3>
-              <h3 className="text-xl font-semibold">{pessoa.rm}</h3>
+              <h4 className="text-xl font-semibold">{pessoa.rm}</h4>
 
               <div className="flex justify-center gap-6 mt-4 text-2xl">
                 <a
